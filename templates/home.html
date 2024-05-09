@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">"
+</head>>
+<form method="post" class="buttons">
+  
+  <h3>Enter The Chat Room</h3>
+  <div>
+    <label>Name:</label>
+    <input type="text" placeholder="Pick a name!" name="name" value="{{ name }}" />
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" placeholder="Enter password" name="password" />
+  </div>
+  <div class="join">
+    <input type="text" placeholder="Room Code" name="code" value="{{ code }}" />
+    <button type="submit" name="join">Join a Room</button>
+  </div>
+  <button type="submit" name="create" class="create-btn">Create a Room</button>
+  {% if error %}
+  <ul>
+    <li>{{ error }}</li>
+  </ul>
+  {% endif %}
+</form>
+<style>
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buttons input, .buttons button {
+  padding: 8px 16px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.buttons input[type="text"], .buttons input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+ul {
+  padding: 0;
+  margin: 5px 0;
+  color: red;
+}
+</style>
+{% endblock %}
