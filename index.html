@@ -8,7 +8,7 @@ import java.io.BufferedReader;
         public static void main(String[] args) {
             try {
                 // Command to run Flask application
-                String command = "python -m flask run --app board --debug";
+                String command = "python -m flask run --app main.py --host=0.0.0.0 --debug";
     
                 // Execute the command
                 Process process = Runtime.getRuntime().exec(command);
